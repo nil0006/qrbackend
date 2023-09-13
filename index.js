@@ -18,6 +18,9 @@ app.post('/save' ,bodyParser.json(), async(req,res)=>{
     let asset = new assets({
         assetId: id,
         stickerId: req.body.stickerId,
+        isActive: req.body.isActive,
+        date:req.body.date
+
       });
       asset
         .save()
