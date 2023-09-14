@@ -27,9 +27,11 @@ app.post('/save' ,bodyParser.json(), async(req,res)=>{
         .then(() => {
           console.log("item saved");
           res.status(200).json({ msg: "success" });
+          res.send('success')
         })
         .catch((err) => {
           res.status(500).json({ msg: "something went wrong", err: err });
+          res.send('error')
         });
 })
 
